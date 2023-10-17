@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="optimize_options">
+        <item>Зафиксировать первую точку</item>
+        <item>Зафиксировать последнюю точку</item>
+    </string-array>
+</resources>

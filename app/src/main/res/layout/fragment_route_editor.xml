@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.route.editor.RouteEditorFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_route_editor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="?android:colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:navigationIcon="@drawable/ic_back"
+            app:titleCentered="true"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <FrameLayout
+            android:id="@+id/fl_route"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/cb_user_location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_route"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/recyclerview_item_edit" />
+
+            <TextView
+                android:id="@+id/tv_order_of_points"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20sp"
+                android:text="@string/order_of_points"
+                android:gravity="center"/>
+
+        </FrameLayout>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_user_location"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp"
+            android:text="@string/consider_my_location"
+            app:checkedState="unchecked"
+            app:layout_constraintBottom_toTopOf="@+id/tg_route_type"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/tg_route_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_create_route"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@+id/btn_pedestrian">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pedestrian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetRight="5dp"
+                app:icon="@drawable/route_editor_pedestrian"
+                style="@style/ToggleButtonIconOnlyStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_bicycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetRight="5dp"
+                android:insetLeft="5dp"
+                app:icon="@drawable/route_editor_bicycle"
+                style="@style/ToggleButtonIconOnlyStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_masstransit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetRight="5dp"
+                android:insetLeft="5dp"
+                app:icon="@drawable/route_editor_masstransit"
+                style="@style/ToggleButtonIconOnlyStyle"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_driving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:insetLeft="5dp"
+                app:icon="@drawable/route_editor_car"
+                style="@style/ToggleButtonIconOnlyStyle"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_create_route"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?android:colorPrimary"
+            android:text="@string/action_create_route"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_optimize_route"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_optimize_route"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?android:colorPrimary"
+            android:text="@string/optimize_route"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/fl_save_route"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <FrameLayout
+            android:id="@+id/fl_save_route"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:viewBindingIgnore="true">
+
+            <LinearLayout
+                android:id="@+id/ll_possibilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_download_route"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_download"
+                        app:backgroundTint="?android:colorPrimary"
+                        app:tint="@color/white"
+                        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_upload_route"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload"
+                        app:backgroundTint="?android:colorPrimary"
+                        app:tint="@color/white"
+                        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btn_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_user"
+                        app:backgroundTint="?android:colorPrimary"
+                        app:tint="@color/white"
+                        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+                </FrameLayout>
+
+            </LinearLayout>
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btn_save_route"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="?android:colorPrimary"-->
+<!--                android:text="@string/save_route"-->
+<!--                android:textSize="16sp"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:foreground="?android:attr/selectableItemBackground"-->
+<!--                android:insetTop="0dp"-->
+<!--                android:insetBottom="0dp"-->
+<!--                android:visibility="gone"-->
+<!--                />-->
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColorHighlight="@android:color/transparent"
+                android:textColorLink="?android:colorPrimary"
+                android:text="@string/offer_to_sign_in"/>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

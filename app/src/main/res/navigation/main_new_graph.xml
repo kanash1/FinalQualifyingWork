@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/interactionWithMapFragment">
+
+    <fragment
+        android:id="@+id/interactionWithMapFragment"
+        android:name="ru.etu.graduatework.ui.interaction.InteractionWithMapFragment"
+        android:label="InteractionWithMapFragment"
+        tools:layout="@layout/fragment_interaction_with_map">
+        <action
+            android:id="@+id/action_interactionWithMapFragment_to_routeEditorFragment2"
+            app:destination="@id/routeEditorFragment2" />
+        <action
+            android:id="@+id/action_interactionWithMapFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="attractionId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/routeEditorFragment2"
+        android:name="ru.etu.graduatework.ui.route.editor.RouteEditorFragment"
+        android:label="RouteEditorFragment"
+        tools:layout="@layout/fragment_route_editor">
+        <action
+            android:id="@+id/action_routeEditorFragment2_to_signInFragment2"
+            app:destination="@id/signInFragment2" />
+        <action
+            android:id="@+id/action_routeEditorFragment2_to_routeNavigationFragment"
+            app:destination="@id/routeNavigationFragment" />
+        <action
+            android:id="@+id/action_routeEditorFragment2_to_optimizationDialogFragment"
+            app:destination="@id/optimizationDialogFragment" />
+        <action
+            android:id="@+id/action_routeEditorFragment2_to_saveRouteDialogFragment"
+            app:destination="@id/saveRouteDialogFragment" />
+        <action
+            android:id="@+id/action_routeEditorFragment2_to_loadSavedRoutesFragment"
+            app:destination="@id/loadSavedRoutesFragment" />
+        <action
+            android:id="@+id/action_routeEditorFragment2_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="ru.etu.graduatework.ui.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_interactionWithMapFragment"
+            app:destination="@id/interactionWithMapFragment"
+            app:popUpTo="@id/interactionWithMapFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment2"
+        android:name="ru.etu.graduatework.ui.entry.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment2_to_signUpFragment2"
+            app:destination="@id/signUpFragment2" />
+        <action
+            android:id="@+id/action_signInFragment2_to_errorDialogFragment"
+            app:destination="@id/errorDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment2"
+        android:name="ru.etu.graduatework.ui.entry.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_signUpFragment2_to_errorDialogFragment"
+            app:destination="@id/errorDialogFragment" />
+        <action
+            android:id="@+id/action_signUpFragment2_to_activateAccountDialogFragment"
+            app:destination="@id/activateAccountDialogFragment"
+            app:popUpTo="@id/signUpFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/routeNavigationFragment"
+        android:name="ru.etu.graduatework.ui.route.navigation.RouteNavigationFragment"
+        android:label="RouteNavigationFragment"
+        tools:layout="@layout/fragment_route_navigation"/>
+    <dialog
+        android:id="@+id/optimizationDialogFragment"
+        android:name="ru.etu.graduatework.ui.route.editor.OptimizationDialogFragment"
+        android:label="OptimizationDialogFragment" />
+    <dialog
+        android:id="@+id/errorDialogFragment"
+        android:name="ru.etu.graduatework.ui.error.ErrorDialogFragment"
+        android:label="ErrorDialogFragment" >
+        <argument
+            android:name="messageId"
+            app:argType="integer" />
+    </dialog>
+    <dialog
+        android:id="@+id/activateAccountDialogFragment"
+        android:name="ru.etu.graduatework.ui.entry.ActivateAccountDialogFragment"
+        android:label="ActivateAccountDialogFragment" />
+    <dialog
+        android:id="@+id/saveRouteDialogFragment"
+        android:name="ru.etu.graduatework.ui.route.save.SaveRouteDialogFragment"
+        android:label="SaveRouteDialogFragment" >
+        <argument
+            android:name="route_name"
+            app:argType="string"
+            app:nullable="true" />
+    </dialog>
+    <fragment
+        android:id="@+id/loadSavedRoutesFragment"
+        android:name="ru.etu.graduatework.ui.route.load.LoadSavedRoutesFragment"
+        android:label="LoadSavedRoutesFragment"
+        tools:layout="@layout/fragment_saved_routes"/>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="ru.etu.graduatework.ui.account.AccountFragment"
+        android:label="AccountFragment"
+        tools:layout="@layout/fragment_account"/>
+</navigation>

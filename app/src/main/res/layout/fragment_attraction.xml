@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:tag="attraction_fragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_attraction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.old.attraction.AttractionFragment">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb_name"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:title="@string/lorem_ipsum" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nsv_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|start"
+                        android:text="@string/lorem_ipsum"
+                        android:textSize="16sp"
+                        android:ellipsize="end"
+                        android:maxLines="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_business_hours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/lorem_ipsum"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/lorem_ipsum"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="16sp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <RatingBar
+                            android:id="@+id/rb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:clickable="false"
+                            android:numStars="5"
+                            style="?android:attr/ratingBarStyleSmall"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/lorem_ipsum_full"
+                        android:textSize="16sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/floppa" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"/>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/motion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutDescription="@xml/fragment_attraction_scene">
+
+            <FrameLayout
+                android:id="@+id/fl_add_remove"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_add_remove"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="16dp"
+                    android:layout_gravity="center"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/lorem_ipsum"
+                    android:textSize="16sp" />
+
+            </FrameLayout>
+
+            <ProgressBar
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                android:indeterminate="true"
+
+                android:indeterminateTint="@android:color/darker_gray" />
+
+            <ImageButton
+                android:id="@+id/ib_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_refresh"
+                android:layout_marginTop="?android:attr/actionBarSize" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressbar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="top|center_horizontal"-->
+<!--        android:layout_marginTop="?android:attr/actionBarSize"-->
+<!--        android:indeterminate="true" />-->
+
+</FrameLayout>

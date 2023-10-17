@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_new_graph"
+    app:startDestination="@id/splashFragment2">
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="ru.etu.graduatework.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment2_to_mapFragment2"
+            app:destination="@id/mapFragment2"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment2_to_launchErrorDialogFragment"
+            app:destination="@id/launchErrorDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment2"
+        android:name="ru.etu.graduatework.ui.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map_new"/>
+    <dialog
+        android:id="@+id/launchErrorDialogFragment"
+        android:name="ru.etu.graduatework.ui.error.LaunchErrorDialogFragment"
+        android:label="LaunchErrorDialogFragment" />
+</navigation>

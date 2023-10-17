@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/route_editor_graph"
+    app:startDestination="@id/routeEditorFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="ru.etu.graduatework.ui.old.entry.signin.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="ru.etu.graduatework.ui.old.entry.signup.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/routeEditorFragment"
+        android:name="ru.etu.graduatework.ui.old.editor.RouteEditorFragment"
+        android:label="fragment_route_editor"
+        tools:layout="@layout/fragment_route_editor" >
+        <action
+            android:id="@+id/action_routeEditorFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+</navigation>

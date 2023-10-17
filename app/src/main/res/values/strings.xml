@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Бродилки</string>
+
+    <!-- Mapkit -->
+    <string name="network_error_message">Ошибка сети</string>
+    <string name="remote_error_message">Удаленный сервер не отвечает</string>
+    <string name="unknown_error_message">Неизвестная ошибка</string>
+
+    <!-- Filler text -->
+    <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="lorem_ipsum_full">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <!-- Splash text -->
+    <string name="please_wait">Пожалуйста, подождите</string>
+
+    <!-- Entry text -->
+    <string name="title_sign_in">Вход</string>
+    <string name="title_sign_up">Регистрация</string>
+    <string name="prompt_username">Имя пользователя</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="prompt_confirm_password">Повторите пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_up">Зарегестрироваться</string>
+    <string name="action_continue">Продолжить без аккаунта</string>
+    <string name="offer_sign_in">Уже есть аккаунт? Войти</string>
+    <string name="offer_sign_up">Ещё нет аккаунта? Зарегестрироваться</string>
+    <string name="option_or">ИЛИ</string>
+
+    <!-- Search text -->
+    <string name="search">Поиск</string>
+
+    <!-- Description text -->
+    <string name="edit_route">Редактировать маршрут</string>
+    <string name="save_route">Сохранить маршрут</string>
+    <string name="optimize_route">Оптимизировать маршрут</string>
+    <string name="offer_to_sign_in_part_1">Войдите в аккаунт,</string>
+    <string name="offer_to_sign_in_part_2">чтобы сохранить маршрут</string>
+    <string name="order_of_points">Чтобы построить маршрут, добавьте в него точки</string>
+    <string name="action_create_route">Построить маршрут</string>
+
+    <string name="network_error_description">Нет подключения к сети или сервер не доступен</string>
+    <string name="retry">Повторить</string>
+    <string name="dismiss">Отмена</string>
+    <string name="OK">OK</string>
+    <string name="no_results">Нет результатов</string>
+
+    <string name="permission">Требуется разрешение</string>
+    <string name="location_permission_permanently_declined">Похоже, вы навсегда отклонили разрешение на доступ к местоположению. Вы можете перейти к настройкам приложения, чтобы предоставить его.</string>
+    <string name="location_permission_declined">Этому приложению требуется разрешение на доступ к точному местоположению, чтобы можно было проложить маршрут от вас до точки интереса.</string>
+    <string name="go_to_settings">Перейти к настройкам</string>
+    <string name="no_permission">Нет, разрешения</string>
+    <string name="gps_turn_on">Пока ваш GPS отключен, мы не можем получить доступ к местоположению. Хотите включить его?</string>
+    <string name="consider_my_location">Учитывать мое местоположение</string>
+    <string name="offer_to_sign_in">Войдите в аккаунт, чтобы сохранить этот или загрузить существующий маршрут</string>
+    <string name="offer_to_sign_in_link_part">Войдите в аккаунт</string>
+    <string name="cannot_get_location">Невозможно получить местоположение</string>
+    <string name="prompt_email">Email</string>
+
+    <string name="schedule">Ежедневное расписание</string>
+    <string name="username_is_invalid"><![CDATA[Используйте не менее 5 символов и не более 32, только буквы (a–z, A–Z), цифры и символы . , \' ! & * _ -]]></string>
+    <string name="password_is_invalid"><![CDATA[Используйте не менее 5 символов и не более 32, среди которых не менее 2 латинских символов разных регистов, не менее 1 цифры, символы . , \' ! & * _ -]]></string>
+    <string name="email_is_invalid">Email-адрес введен неправильно</string>
+    <string name="user_does_not_exist">Пользователя с таким именем не существует</string>
+    <string name="account_already_exists">Аккаунт с указанной почтой уже существует</string>
+    <string name="username_is_taken">Имя пользователя занято</string>
+    <string name="password_mismatch">Пароли не совпадают</string>
+    <string name="logout">Выйти</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="wrong_sign_in_data">Имя пользователя или пароль указаны неправильно</string>
+    <string name="wrong_sign_up_data">На данный email уже зарегестрирован аккаунт или имя пользователя уже занято</string>
+    <string name="success">Успех</string>
+    <string name="go_through_account_activation">На вашу почту было выслано письмо для активации аккаунта. После активации выполните вход</string>
+    <string name="give_name_to_route">Дайте название маршруту</string>
+    <string name="route_name">Имя маршрута</string>
+</resources>

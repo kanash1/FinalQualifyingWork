@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="ru.etu.graduatework.ui.old.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_searchDialogFragment"
+            app:destination="@id/searchDialogFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_holderDialogFragment"
+            app:destination="@id/holderDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/searchDialogFragment"
+        android:name="ru.etu.graduatework.ui.old.search.SearchDialogFragment"
+        android:label="SearchDialogFragment"
+        tools:layout="@layout/fragment_search" />
+    <dialog
+        android:id="@+id/holderDialogFragment"
+        android:name="ru.etu.graduatework.ui.old.HolderDialogFragment"
+        android:label="HolderDialogFragment"
+        tools:layout="@layout/fragment_holder" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="ru.etu.graduatework.ui.old.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

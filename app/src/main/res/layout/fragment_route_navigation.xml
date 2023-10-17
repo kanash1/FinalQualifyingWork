@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="?android:colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleCentered="true"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_zoom_out"
+        android:layout_gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:useCompatPadding="true"
+        android:src="@drawable/ic_zoom_out"
+        app:backgroundTint="?android:colorPrimary"
+        app:tint="@color/white"
+        app:layout_anchor="@+id/rv_description"
+        app:layout_anchorGravity="top|end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rv_description"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_zoom_in"
+        android:layout_gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:useCompatPadding="true"
+        android:src="@drawable/ic_zoom_in"
+        app:backgroundTint="?android:colorPrimary"
+        app:tint="@color/white"
+        app:layout_anchor="@+id/btn_zoom_out"
+        app:layout_anchorGravity="top|end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_zoom_out"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_location"
+        android:layout_gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:useCompatPadding="true"
+        android:src="@drawable/ic_location"
+        app:backgroundTint="?android:colorPrimary"
+        app:tint="@color/white"
+        app:layout_anchor="@+id/btn_zoom_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_zoom_in"
+        app:layout_anchorGravity="top|end"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:listitem="@layout/recyclerview_masstransit_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <FrameLayout
+        android:id="@+id/fl_load"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
